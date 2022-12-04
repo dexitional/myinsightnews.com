@@ -4,81 +4,49 @@ import Image from 'next/image'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="bg-white">
+      {/* socials & Search */}
+      <section className="w-full border-t-2 border-t-pink-300 border-b border-b-gray-200 ">
+         <div className="mx-auto w-full max-w-6xl h-8 flex flex-row justify-end">
+           <div className="w-2/5 h-full flex flex-row items-center justify-end space-x-2">
+             <div className="mx-4">S</div>
+             <span className="mx-4 text-xs text-gray-400/70 font-openSans">Saturday, December 3, 2022</span>
+             <div className="flex items-center space-x-1">
+                <div className="w-6 h-6 flex items-center justify-center bg-blue-900/80 text-lg text-white font-bold cursor-pointer">f</div>
+                <div className="w-6 h-6 flex items-center justify-center bg-blue-400/80 text-lg text-white font-bold cursor-pointer">t</div>
+                <div className="w-6 h-6 flex items-center justify-center bg-red-700/80 text-lg text-white font-bold cursor-pointer">vi</div>
+                <div className="w-6 h-6 flex items-center justify-center bg-orange-400/80 text-lg text-white font-bold cursor-pointer">s</div>
+             </div>
+             <div className="p-1 w-12 h-6 flex items-center border rounded-xl bg-gray-200/70">
+               <span className="w-4 h-4 rounded-full bg-white text-xs text-gray-500 text-center font-bold cursor-pointer">D</span>
+             </div>
+           </div>
+         </div>
+      </section>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      {/* navigations */}
+      <section className="h-12 border-b ">
+        <nav className="mx-auto w-full max-w-6xl h-full  flex items-center">
+          <div className="px-4 h-full bg-pink-50 text-xl tracking-wider font-bold text-pink-700 flex items-center border-l-4 border-pink-600 font-kaushan">myinsightnews.com</div>
+          <div className="h-full flex-1 flex justify-end">
+              <ul className="h-full flex items-center justify-end space-x-2 font-opensans">
+                 <li className="px-4 h-full flex items-center font-bold hover:bg-pink-50 cursor-pointer">HOME</li>
+                 <li className="px-4 h-full flex items-center font-bold hover:bg-pink-50 cursor-pointer">NEWS</li>
+                 <li className="px-4 h-full flex items-center font-bold hover:bg-pink-50 cursor-pointer">POLITICS</li>
+                 <li className="px-4 h-full flex items-center font-bold hover:bg-pink-50 cursor-pointer">EDUCATION</li>
+                 <li className="px-4 h-full flex items-center font-bold hover:bg-pink-50 cursor-pointer">ENTERTAINMENT</li>
+                 <li className="px-4 h-full flex items-center font-bold hover:bg-pink-50 cursor-pointer">HEALTH</li>
+                 <li className="px-4 h-full flex items-center font-bold hover:bg-pink-50 cursor-pointer">ECONOMIC</li>
+                 <li className="px-4 h-full flex items-center font-bold hover:bg-pink-50 cursor-pointer">LAW</li>
+                 <li className="px-4 h-full flex items-center font-bold hover:bg-pink-50 cursor-pointer">SPORTS</li>
+              </ul>
+          </div>
+        </nav>
+      </section>
+      {/* Title Section */}
+      {/* top summary Sesction */}
+      {/* main content */}
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
     </div>
   )
 }
