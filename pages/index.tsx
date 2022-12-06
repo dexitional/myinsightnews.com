@@ -55,7 +55,7 @@ const Home: NextPage = () => {
       {/* Title Section */}
 
       {/* top summary Sesction */}
-      <section className="my-8 w-full max-w-6xl h-96 mx-auto flex space-x-2 bg-slate-50">
+      <section className="my-8 w-full max-w-6xl h-96 mx-auto flex space-x-2 bg-slate-50 font-josefin">
         <div className=" relative flex-1 group overflow-hidden">
             <img className="z-1 h-full object-cover transition-all duration-200 group-hover:scale-105" src={`https://citibusinessnews.com/wp-content/uploads/2022/12/ken-ofori-atta-speech-750x375-1.png`} />
             <div className="px-8 py-4 h-full w-full absolute top-0 z-2 bg-gradient-to-b from-black/10 via-black/10 to-black/70 flex flex-col space-y-2 justify-end">
@@ -99,9 +99,14 @@ const Home: NextPage = () => {
 
 
       {/* main content */}
-      <section className="my-8 w-full max-w-6xl h-96 mx-auto flex space-x-2 bg-slate-50">
+      <section className="my-8 w-full max-w-6xl min-h-screen mx-auto flex space-x-2 bg-slate-50">
          {/* Content */}
-         <div className="flex-1 bg-red-100"></div>
+         <div className="flex-1">
+            <div className="relative border-b-[3px] border-pink-800/50">
+               <span className="text-base font-semibold font-opensans">GENERAL NEWS</span>
+               <span className="w-10 absolute left-0 -bottom-[0.19rem] border-b-[3px] border-gray-800">&nbsp;</span>
+            </div>
+         </div>
          
          {/* Sidebar - AdBox */}
          <div className="w-[33%] bg-slate-100"></div>
