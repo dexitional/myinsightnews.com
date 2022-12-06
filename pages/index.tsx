@@ -96,7 +96,16 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
+
+
       {/* main content */}
+      <section className="my-8 w-full max-w-6xl h-96 mx-auto flex space-x-2 bg-slate-50">
+         {/* Content */}
+         <div className="flex-1 bg-red-100"></div>
+         
+         {/* Sidebar - AdBox */}
+         <div className="w-[33%] bg-slate-100"></div>
+      </section>
 
     </div>
   )
