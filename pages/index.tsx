@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import NavLink from '../components/NavLink'
 import { HiOutlineMoon } from 'react-icons/hi'
-import { FaTwitter,FaYoutube,FaSoundcloud,FaSearch } from 'react-icons/fa'
+import { FaTwitter,FaYoutube,FaSoundcloud,FaSearch,FaRegArrowAltCircleDown } from 'react-icons/fa'
 import { BiSearch } from 'react-icons/bi'
 
 const Home: NextPage = () => {
@@ -128,11 +128,79 @@ const Home: NextPage = () => {
                      </div>
                      <p className="py-3 text-base text-gray-700 font-semibold ">Domestic debt exchange: No haircut on treasury bills, principal bonds Govt</p>
                  </div>
+                 <div>
+                     <div className="relative">
+                       <img className="h-48 object-cover" src={`https://citibusinessnews.com/wp-content/uploads/2022/12/ken-ofori-atta-speech-750x375-1.png`} />
+                       <span className="absolute bottom-3 left-3 py-0.5 px-1 w-36 shadow-sm bg-pink-700/70 text-xs font-semibold tracking-wider text-white text-center">LOCAL ECONOMY</span>
+                     </div>
+                     <p className="py-3 text-base text-gray-700 font-semibold ">Domestic debt exchange: No haircut on treasury bills, principal bonds Govt</p>
+                 </div>
+                 <div>
+                     <div className="relative">
+                       <img className="h-48 object-cover" src={`https://citibusinessnews.com/wp-content/uploads/2022/12/ken-ofori-atta-speech-750x375-1.png`} />
+                       <span className="absolute bottom-3 left-3 py-0.5 px-1 w-36 shadow-sm bg-pink-700/70 text-xs font-semibold tracking-wider text-white text-center">LOCAL ECONOMY</span>
+                     </div>
+                     <p className="py-3 text-base text-gray-700 font-semibold ">Domestic debt exchange: No haircut on treasury bills, principal bonds Govt</p>
+                 </div>
+                 <div>
+                     <div className="relative">
+                       <img className="h-48 object-cover" src={`https://citibusinessnews.com/wp-content/uploads/2022/12/ken-ofori-atta-speech-750x375-1.png`} />
+                       <span className="absolute bottom-3 left-3 py-0.5 px-1 w-36 shadow-sm bg-pink-700/70 text-xs font-semibold tracking-wider text-white text-center">LOCAL ECONOMY</span>
+                     </div>
+                     <p className="py-3 text-base text-gray-700 font-semibold ">Domestic debt exchange: No haircut on treasury bills, principal bonds Govt</p>
+                 </div>
+                 <div>
+                     <div className="relative">
+                       <img className="h-48 object-cover" src={`https://citibusinessnews.com/wp-content/uploads/2022/12/ken-ofori-atta-speech-750x375-1.png`} />
+                       <span className="absolute bottom-3 left-3 py-0.5 px-1 w-36 shadow-sm bg-pink-700/70 text-xs font-semibold tracking-wider text-white text-center">LOCAL ECONOMY</span>
+                     </div>
+                     <p className="py-3 text-base text-gray-700 font-semibold ">Domestic debt exchange: No haircut on treasury bills, principal bonds Govt</p>
+                 </div>
+                 <div>
+                     <div className="relative">
+                       <img className="h-48 object-cover" src={`https://citibusinessnews.com/wp-content/uploads/2022/12/ken-ofori-atta-speech-750x375-1.png`} />
+                       <span className="absolute bottom-3 left-3 py-0.5 px-1 w-36 shadow-sm bg-pink-700/70 text-xs font-semibold tracking-wider text-white text-center">LOCAL ECONOMY</span>
+                     </div>
+                     <p className="py-3 text-base text-gray-700 font-semibold ">Domestic debt exchange: No haircut on treasury bills, principal bonds Govt</p>
+                 </div>
+                 <div>
+                     <div className="relative">
+                       <img className="h-48 object-cover" src={`https://citibusinessnews.com/wp-content/uploads/2022/12/ken-ofori-atta-speech-750x375-1.png`} />
+                       <span className="absolute bottom-3 left-3 py-0.5 px-1 w-36 shadow-sm bg-pink-700/70 text-xs font-semibold tracking-wider text-white text-center">LOCAL ECONOMY</span>
+                     </div>
+                     <p className="py-3 text-base text-gray-700 font-semibold ">Domestic debt exchange: No haircut on treasury bills, principal bonds Govt</p>
+                 </div>
+            </div>
+            <div>
+                 <div></div>
+                 <div className="px-4 py-2 flex items-center justify-center space-x-4 rounded-lg bg-pink-50 cursor-pointer">
+                     <span className="font-bold text-pink-800">LOAD MORE</span>
+                     <FaRegArrowAltCircleDown className="w-5 h-5 text-pink-900"/>
+                 </div>
             </div>
          </div>
          
          {/* Sidebar - AdBox */}
-         <div className="w-[33%] bg-slate-100"></div>
+         <div className="p-4 w-[33%] rounded-lg bg-slate-100">
+             <div>
+                Advertisements
+             </div>
+             <div>
+                Top Stories
+             </div>
+         </div>
+      </section>
+
+      {/* Footer */}
+      <section className="w-full bg-gray-800 ">
+         <div className="py-4 mx-auto w-full h-48 max-w-6xl flex space-x-6">
+             <div className="mt-4 w-48 flex flex-col space-y-2 items-center">
+                <span className="px-4 text-xl tracking-wider font-bold text-pink-700 flex items-center border-l-4 border-pink-600 font-kaushan">myinsightnews.com</span>
+                <p className="text-slate-100 text-xs tracking-wide">© 2019 MyInsightNewsGH <br/><em>Ghana's #1 news agency.</em></p>
+             </div>
+             <div className="flex-1">sad</div>
+             <div className="w-56 bg-yellow-50">sad</div>
+         </div>
       </section>
 
     </div>
