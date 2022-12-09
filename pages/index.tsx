@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import NavLink from '../components/NavLink'
 import { HiOutlineMoon } from 'react-icons/hi'
-import { FaTwitter,FaYoutube,FaSoundcloud,FaSearch,FaRegArrowAltCircleDown } from 'react-icons/fa'
+import { FaTwitter,FaYoutube,FaSoundcloud,FaSearch,FaRegArrowAltCircleDown,FaFacebookF } from 'react-icons/fa'
 import { BiSearch } from 'react-icons/bi'
 
 const Home: NextPage = () => {
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
              <FaSearch className="h-4 w-4 cursor-pointer" />
              <span className="mx-4 text-xs text-gray-400/70 font-openSans">Saturday, December 3, 2022</span>
              <div className="flex items-center space-x-1">
-                <div className="w-6 h-6 flex items-center justify-center bg-blue-900/80 text-lg text-white font-bold cursor-pointer">f</div>
+                <FaFacebookF className="p-1 w-6 h-6 flex items-center justify-center bg-blue-900/80 text-lg text-white font-bold cursor-pointer"/>
                 <FaTwitter className="p-1.5 w-6 h-6 flex items-center justify-center bg-blue-400/80 text-lg text-white font-bold cursor-pointer"/>
                 <FaYoutube className="p-1 w-6 h-6 flex items-center justify-center bg-red-700/80 text-lg text-white font-bold cursor-pointer"/>
                 <FaSoundcloud className="p-1 w-6 h-6 flex items-center justify-center bg-orange-400/80 text-lg text-white font-bold cursor-pointer"/>
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
       </section>
 
       {/* navigations */}
-      <section className="h-12 border-b ">
+      <section className="h-12 border-b">
         <nav className="mx-auto w-full max-w-6xl h-full hidden sm:flex items-center">
           <div className="px-4 h-full bg-pink-50 text-xl tracking-wider font-bold text-pink-700 flex items-center border-l-4 border-pink-600 font-kaushan">myinsightnews.com</div>
           <div className="h-full flex-1 flex justify-end">
@@ -58,13 +58,14 @@ const Home: NextPage = () => {
       {/* Title Section */}
 
       {/* top summary Sesction */}
-      <section className="my-8 h-full w-full sm:max-w-6xl sm:h-96 mx-auto flex flex-col space-y-6 sm:flex-row sm:space-x-2 bg-slate-50 font-josefin">
-        <div className="relative h-full flex-1 group">
-            <img className="z-1 h-full object-cover transition-all duration-200 group-hover:scale-105" src={`https://citibusinessnews.com/wp-content/uploads/2022/12/ken-ofori-atta-speech-750x375-1.png`} />
-            <div className="px-8 py-4 h-full w-full absolute top-0 z-2 bg-gradient-to-b from-black/10 via-black/10 to-black/70 flex flex-col space-y-2 justify-end">
-                <span className="py-0.5 px-1 w-36 rounded shadow-sm bg-pink-700/70 text-xs font-semibold tracking-wider text-white text-center">LOCAL ECONOMY</span>
-                <h1 className="text-lg sm:text-2xl text-white font-bold shadow-sm leading-[1.3rem] sm:leading-0">Domestic debt exchange: No haircut on treasury bills, principal bonds Govt</h1>
-            </div>
+      <section className="my-2 mx-auto h-full w-full sm:max-w-6xl sm:h-96 flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:space-x-2 bg-slate-50 font-josefin">
+        
+        <div className="relative w-full flex-1 group bg-red-900">
+          <img className="z-1 h-48 sm:h-96 object-cover transition-all duration-200 group-hover:scale-105" src={`https://citibusinessnews.com/wp-content/uploads/2022/12/ken-ofori-atta-speech-750x375-1.png`} />
+          <div className="px-8 py-4 h-full w-full absolute top-0 z-2 bg-gradient-to-b from-black/10 via-black/10 to-black/70 flex flex-col space-y-2 justify-end">
+            <span className="py-0.5 px-1 w-36 rounded shadow-sm bg-pink-700/70 text-xs font-semibold tracking-widertext-white text-center">LOCAL ECONOMY</span>
+            <h1 className="text-lg sm:text-2xl text-white font-bold shadow-sm leading-[1.3rem] sm:leading-0">Domestic debt exchange: No haircut on treasury bills, principal bonds Govt</h1>
+          </div>
         </div>
 
         <div className="px-2 sm:px-0 flex-1 grid sm:grid-cols-2 gap-1 sm:gap-2">
@@ -187,7 +188,7 @@ const Home: NextPage = () => {
          <div className="sm:sticky sm:top-5 mx-auto my-4 sm:my-0 sm:mx-0 p-4 h-screen w-[95%] sm:w-[33%] rounded-lg bg-slate-100">
              <div>
                 Advertisements
-             </div>
+             </div>  
              <div>
                 Top Stories
              </div>
@@ -196,13 +197,21 @@ const Home: NextPage = () => {
 
       {/* Footer */}
       <section className="w-full bg-gray-800 ">
-         <div className="px-2 sm:px-0 py-4 mx-auto w-full h-48 max-w-6xl flex space-x-6">
+         <div className="px-2 sm:px-0 py-4 mx-auto w-full max-w-6xl flex flex-col items-center sm:flex-row sm:space-x-6">
              <div className="mt-4 w-48 flex flex-col space-y-2 items-center">
                 <span className="px-4 text-xl tracking-wider font-bold text-pink-700 flex items-center border-l-4 border-pink-600 font-kaushan">myinsightnews.com</span>
                 <p className="text-slate-100 text-xs tracking-wide">© 2019 MyInsightNewsGH <br/><em>Ghana's #1 news agency.</em></p>
              </div>
              <div className="flex-1">sad</div>
-             <div className="w-56 bg-yellow-50">sad</div>
+             <div className="w-56">
+                <h1 className="py-4 text-lg text-white text-center font-bold font-josefin ">Follow Us</h1>
+                <div className="px-4 py-2 flex flex-row space-x-10 border border-white rounded-lg">
+                  <FaFacebookF className="w-5 h-5 flex items-center justify-center  text-lg text-white font-bold cursor-pointer"/>
+                  <FaTwitter className="w-6 h-6 flex items-center justify-center text-lg text-white font-bold cursor-pointer"/>
+                  <FaYoutube className="w-7 h-6 flex items-center justify-center  text-lg text-white font-bold cursor-pointer"/>
+                  <FaSoundcloud className="w-8 h-7 flex items-center justify-center text-lg text-white font-bold cursor-pointer"/>
+                </div>
+             </div>
          </div>
       </section>
 
