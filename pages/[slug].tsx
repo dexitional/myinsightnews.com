@@ -23,10 +23,10 @@ const Home: NextPage = () => {
     <Layout>
      <div className="my-2 mx-auto w-full sm:max-w-6xl">
          {/* Main content */}
-      <article className="my-8 w-full sm:max-w-6xl min-h-screen mx-auto flex flex-col sm:space-x-4">
+      <article className="my-8 w-full sm:max-w-6xl min-h-screen mx-auto flex flex-col space-y-3 sm:space-x-4 sm:space-y-0">
          {/* Content */}
-         <div className="py-4 w-full flex flex-col space-y-5">
-            <h1 className="text-5xl font-bold leading-[3.7rem]">Investment in technology critical to economic growth – Elsie Addo Awadzi</h1>
+         <div className="sm:py-4 px-4 w-full flex flex-col space-y-5">
+            <h1 className="text-3xl sm:text-5xl font-bold sm:leading-[3.7rem]">Investment in technology critical to economic growth – Elsie Addo Awadzi</h1>
             <p className="text-[0.88rem]">
               <span>by </span>
               <span className="font-bold">citibusinessnews</span>
