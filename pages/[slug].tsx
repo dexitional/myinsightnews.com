@@ -9,6 +9,7 @@ import Socials from '../components/Socials'
 import { sanityClient, urlFor } from '../sanity'
 import { Post } from '../typings'
 import PortableText,{blockContentToPlainText} from 'react-portable-text'
+import Image from 'next/image'
 
 interface Props {
    data: any,
@@ -50,13 +51,15 @@ const Home = ({ post,recent }: Props) => {
               <span className="font-bold">{post?.name}</span>
               <span className="font-bold"> --- </span>
               <span>{post?._createdAt} in </span>
-              <span className="font-bold">{ post?.categories.map(r => r.title).join(', ')}  </span>
+              <span className="font-bold">{ post?.categories?.map(r => r?.title)?.join(', ')}  </span>
             </p>
          </div>
          <div className="w-full flex flex-col sm:flex-row sm:space-x-4 ">
             <div className="px-2 sm:px-0 flex-1">
-                <img className="" src={post?.mainImage && urlFor(post?.mainImage).url()} />
-                <Socials title={post?.title} slug={post?.slug.current} siteUrl="https://myinsightnews.com" />
+                <div className="relative h-[30rem] w-full rounded">
+                   <Image className="object-cover object-top" src={post?.mainImage && urlFor(post?.mainImage)?.width(786).url()} alt={post?.title} fill />
+                </div>
+                <Socials title={post?.title} slug={post?.slug.current} siteUrl={siteUrl} />
                 <div className="adsbox"></div>
                 <div>
                   <PortableText 
@@ -78,9 +81,9 @@ const Home = ({ post,recent }: Props) => {
                 
                 <div className="my-10">
                   <SectionTitle title="Related Posts" />
-                  <RelatedMainCard title={mainRecent?.title} link={`/${mainRecent?.slug.current}`} excerpt={blockContentToPlainText(mainRecent?.body).substring(0,160)} author={mainRecent?.name} imgUrl={mainRecent?.mainImage && urlFor(mainRecent?.mainImage)?.url()} />
+                  <RelatedMainCard title={mainRecent?.title} link={`/${mainRecent?.slug.current}`} excerpt={blockContentToPlainText(mainRecent?.body).substring(0,160)} author={mainRecent?.name} imgUrl={mainRecent?.mainImage && urlFor(mainRecent?.mainImage)?.width(300).url()} />
                   <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8">
-                     { recent?.filter( (r: any, i: React.Key) => i !== 0 ).map((row: any,i: React.Key) => (<RelatedCard key={i} title={row?.title} link={`/${row?.slug.current}`} imgUrl={urlFor(row?.mainImage)?.url()} />)) }
+                     { recent?.filter( (r: any, i: React.Key) => i !== 0 ).map((row: any,i: React.Key) => (<RelatedCard key={i} title={row?.title} link={`/${row?.slug.current}`} imgUrl={urlFor(row?.mainImage)?.width(200).url()} />)) }
                   </div>
                 </div>
             </div>
