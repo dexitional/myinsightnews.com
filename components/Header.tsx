@@ -28,7 +28,7 @@ function Header() {
 
   return (
     <>
-    <section className="hidden sm:flex w-full border-t-2 border-t-pink-300 border-b border-b-gray-200 ">
+     <section className="hidden sm:flex w-full border-t-2 border-t-pink-300 border-b border-b-gray-200 ">
          <div className="mx-auto w-full max-w-6xl h-8 flex flex-row justify-end">
            <div className="h-full flex items-center justify-end space-x-6">
              <FaSearch className="h-4 w-4 cursor-pointer" />
