@@ -8,8 +8,12 @@ import Sidebar from '../components/Sidebar'
 import Socials from '../components/Socials'
 import { sanityClient, urlFor } from '../sanity'
 import { Post } from '../typings'
-import PortableText,{blockContentToPlainText} from 'react-portable-text'
+// import PortableText,{ blockContentToPlainText } from 'react-portable-text'
+import { blockContentToPlainText } from 'react-portable-text'
+import { PortableText,toPlainText } from '@portabletext/react'
 import Image from 'next/image'
+import moment from 'moment'
+import { RichTextComponents } from '../components/RichTextComponent'
 
 interface Props {
    data: any,
@@ -17,9 +21,9 @@ interface Props {
    recent: [Post]
  }
 
-const Home = ({ post,recent }: Props) => {
+const Home = ({ post, recent }: Props) => {
 
-  const mainRecent = recent[0];
+  const mainRecent = recent && recent[0];
   const siteUrl = `https://myinsightnews.com`
 
   return (
@@ -32,7 +36,8 @@ const Home = ({ post,recent }: Props) => {
          <meta property="og:image" content={post?.mainImage && urlFor(post?.mainImage).width(600).url()} />
          <meta property="og:type" content="profile.image" />
          <meta property="og:url" content={`${siteUrl}/${post?.slug?.current}`} />
-         <meta name="description" content={blockContentToPlainText(post?.body).substring(0,160)} />
+         <meta name="description" content={blockContentToPlainText(post?.body)?.substring(0,160)} />
+         {/* <meta name="description" content={toPlainText(post?.body)?.substring(0,160)} /> */}
          <meta name="keywords" content={post?.keywords} />
          <meta name="author" content={post?.name} />
     </Head>
@@ -41,47 +46,62 @@ const Home = ({ post,recent }: Props) => {
          {/* Main content */}
       <article className="my-8 w-full sm:max-w-6xl min-h-screen mx-auto flex flex-col space-y-3 sm:space-x-4 sm:space-y-0">
          {/* Content */}
-        
-         title={post?.title} date={post?._createdAt} author={post?.name}
-
-         <div className="sm:py-4 px-4 w-full flex flex-col space-y-5">
-            <h1 className="text-3xl sm:text-5xl font-bold sm:leading-[3.7rem]">{post?.title}</h1>
+        <div className="sm:py-4 px-4 w-full flex flex-col space-y-5">
+            <h1 className="text-xl sm:text-5xl font-bold sm:leading-[3.7rem]">{post?.title}</h1>
             <p className="text-[0.88rem]">
               <span>by </span>
               <span className="font-bold">{post?.name}</span>
               <span className="font-bold"> --- </span>
-              <span>{post?._createdAt} in </span>
+              <span>{moment(post?._createdAt).format('MMM DD, YYYY')} in </span>
               <span className="font-bold">{ post?.categories?.map(r => r?.title)?.join(', ')}  </span>
             </p>
          </div>
          <div className="w-full flex flex-col sm:flex-row sm:space-x-4 ">
             <div className="px-2 sm:px-0 flex-1">
-                <div className="relative h-[30rem] w-full rounded">
-                   <Image className="object-cover object-top" src={post?.mainImage && urlFor(post?.mainImage)?.width(786).url()} alt={post?.title} fill />
+                <div className="relative h-56 md:h-[30rem] w-full rounded">
+                   <Image className="object-cover object-top" src={post?.mainImage && urlFor(post?.mainImage)?.width(800).url()} alt={post?.title} fill />
                 </div>
                 <Socials title={post?.title} slug={post?.slug.current} siteUrl={siteUrl} />
                 <div className="adsbox"></div>
-                <div>
-                  <PortableText 
-                        className={`text-black/80`}
+                <div className="w-full prose-sm lg:prose-lg">
+                  {/* <PortableText 
+                        className={`px-2 text-black/80 space-y-6 font-medium`}
                         dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
                         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-                        content={post?.body}
+                        content={post?.body || ''}
                         serializers={{
-                           h1: (props:any) => (<h1 className="text-2xl font-bold my-3" {...props}/>),
-                           h2: (props:any) => (<h2 className="text-xl font-bold my-3" {...props}/>),
-                           p: ({children}: any) => (<p className="my-20">{children}</p>),
+                           h1: (props:any) => (<h1 className="text-2xl font-bold font-cinzel my-3" {...props}/>),
+                           h2: (props:any) => (<h2 className="text-xl font-bold font-cinzel my-3" {...props}/>),
+                           p: ({children}: any) => (<p className="my-20 font-interx">{children}</p>),
                            image:  ({children}:any) => (
                               <div className="my-3 p-2 rounded bg-slate-50/50">{children}</div>
                            ),
                            li: ({children}: any) => (<li className="ml-4 list-disc">{children}</li>),
                         }}
-                     />
+                        ignoreUnknownTypes={true}
+                  /> */}
+                  {/* <PortableText 
+                        className={`px-2 text-black/80 space-y-6 font-medium`}
+                        dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+                        projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+                        content={post?.body}
+                        serializers={{
+                           h1: (props:any) => (<h1 className="text-2xl font-bold font-cinzel my-3" {...props}/>),
+                           h2: (props:any) => (<h2 className="text-xl font-bold font-cinzel my-3" {...props}/>),
+                           p: ({children}: any) => (<p className="my-20 font-interx">{children}</p>),
+                           image:  ({children}:any) => (
+                              <div className="my-3 p-2 rounded bg-slate-50/50">{children}</div>
+                           ),
+                           li: ({children}: any) => (<li className="ml-4 list-disc">{children}</li>),
+                        }}
+                  /> */}
+                  {/*  @ts-ignore */}
+                  <PortableText value={post?.body} components={RichTextComponents} />
                 </div>
                 
                 <div className="my-10">
                   <SectionTitle title="Related Posts" />
-                  <RelatedMainCard title={mainRecent?.title} link={`/${mainRecent?.slug.current}`} excerpt={blockContentToPlainText(mainRecent?.body).substring(0,160)} author={mainRecent?.name} imgUrl={mainRecent?.mainImage && urlFor(mainRecent?.mainImage)?.width(300).url()} />
+                  <RelatedMainCard title={mainRecent?.title} link={`/${mainRecent?.slug.current}`} excerpt={blockContentToPlainText(mainRecent?.body)?.substring(0,160)} author={mainRecent?.name} imgUrl={mainRecent?.mainImage && urlFor(mainRecent?.mainImage)?.width(300).url()} />
                   <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8">
                      { recent?.filter( (r: any, i: React.Key) => i !== 0 ).map((row: any,i: React.Key) => (<RelatedCard key={i} title={row?.title} link={`/${row?.slug.current}`} imgUrl={urlFor(row?.mainImage)?.width(200).url()} />)) }
                   </div>
@@ -118,7 +138,7 @@ interface Props {
    )
  
    return {
-     paths: paths.map((slug: Props) => ({params: {slug}})),
+     paths: paths.map((slug: Props) => ({ params: {slug} })),
      fallback: true,
    }
  }

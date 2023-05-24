@@ -1,11 +1,11 @@
 export const links = [
     { name:'HOME', url: '/', active: true },
-    { name:'NEWS', url: '/news' },
-    { name:'POLITICS', url: '/politics' },
-    { name:'EDUCATION', url: '/education' },
-    { name:'ENTERTAINMENT', url: '/showbiz' },
-    { name:'HEALTH', url: '/health' },
-    { name:'ECONOMIC', url: '/economic' },
-    { name:'LAW', url: '/law' },
-    { name:'SPORTS', url: '/sports' }
+    { name:'NEWS', url: '/category/news' },
+    { name:'POLITICS', url: '/category/politics' },
+    { name:'EDUCATION', url: '/category/education' },
+    { name:'ENTERTAINMENT', url: '/category/showbiz' },
+    { name:'HEALTH', url: '/category/health' },
+    { name:'ECONOMIC', url: '/category/economic' },
+    { name:'LAW', url: '/category/law' },
+    { name:'SPORTS', url: '/category/sports' }
  ]

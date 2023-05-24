@@ -8,24 +8,14 @@ import { IoMdMenu,IoMdSearch } from 'react-icons/io'
 import { useRouter } from 'next/router'
 import moment from 'moment'
 import TopSocials from './TopSocials'
+import { links } from '../menu'
 
 
 function Header() {
     const newtime = moment().format()
     const router = useRouter()
     const { slug } = router.query
-    const links = [
-        { name:'HOME', url: '/', slug:'' },
-        { name:'NEWS', url: '/news', slug:'news' },
-        { name:'POLITICS', url: '/politics', slug:'politics' },
-        { name:'EDUCATION', url: '/education', slug:'education' },
-        { name:'ENTERTAINMENT', url: '/showbiz', slug:'showbiz' },
-        { name:'HEALTH', url: '/health', slug:'health' },
-        { name:'ECONOMIC', url: '/economic', slug:'economic' },
-        { name:'LAW', url: '/law', slug:'law' },
-        { name:'SPORTS', url: '/sports', slug:'sports' }
-   ]
-
+   
   return (
     <>
      <section className="hidden sm:flex w-full border-t-2 border-t-pink-300 border-b border-b-gray-200 ">
@@ -47,7 +37,7 @@ function Header() {
           <div className="px-4 h-full bg-pink-50 text-xl tracking-wider font-bold text-pink-700 flex items-center border-l-4 border-pink-600 font-kaushan">myinsightnews.com</div>
           <div className="h-full flex-1 flex justify-end">
               <div className="h-full flex items-center justify-end font-opensans">
-                 { links.map( link => (<NavLink key={link} title={link.name} link={link.url} active={ slug?.toString() == '' || slug === link.slug } />)) }
+                 { links?.map( link => (<NavLink key={link} title={link.name} link={link.url} active={ slug?.toString() == '' || slug === link.url } />)) }
               </div>
           </div>
         </nav>
